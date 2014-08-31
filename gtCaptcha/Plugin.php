@@ -43,7 +43,7 @@ class gtCaptcha_Plugin implements Typecho_Plugin_Interface
      */
     public static function personalConfig(Typecho_Widget_Helper_Form $form) {}
     
-	/**
+    /**
      * 获取插件配置面板
      * 
      * @access public
@@ -59,9 +59,9 @@ class gtCaptcha_Plugin implements Typecho_Plugin_Interface
 		$form->addInput($privatekey);
 	}
 	
-	/**
-	 * 展示验证码
-	 */
+    /**
+     * 展示验证码
+     */
 	public static function output() {
 		$publickey = Typecho_Widget::widget('Widget_Options')->plugin('gtCaptcha')->publickey;
 		
