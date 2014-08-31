@@ -12,7 +12,6 @@ function geetest_get_html ($pubkey) {
 	}
 
   return '<script type="text/javascript" src="http://api.geetest.com/get.php?gt='.$pubkey.'"></script>';
-
 }
 
 

@@ -4,8 +4,8 @@
  * 
  * @package gtCaptcha
  * @author 啸傲居士
- * @version 0.0.1
- * @link http://geaya.com
+ * @version 1.0
+ * @link http://jiya.io
  */
 
 require_once('SDK/geetestlib.php');
@@ -52,7 +52,7 @@ class gtCaptcha_Plugin implements Typecho_Plugin_Interface
      */
 	public static function config(Typecho_Widget_Helper_Form $form) {
 		$publickeyDescription = _t("To use GeeTest you must get an API key from <a href='http://www.geetest.com/'>http://www.geetest.com/</a>");
-		$publickey = new Typecho_Widget_Helper_Form_Element_Text('publickey', NULL, '', _t('Public ID:'), $publickeyDescription);
+		$publickey = new Typecho_Widget_Helper_Form_Element_Text('publickey', NULL, '', _t('Public Key:'), $publickeyDescription);
 		$privatekey = new Typecho_Widget_Helper_Form_Element_Text('privatekey', NULL, '', _t('Private Key:'), _t(''));
 		
 		$form->addInput($publickey);
@@ -66,10 +66,6 @@ class gtCaptcha_Plugin implements Typecho_Plugin_Interface
 		$publickey = Typecho_Widget::widget('Widget_Options')->plugin('gtCaptcha')->publickey;
 		
 		echo geetest_get_html($publickey);
-		
-echo <<<EOF
-		<label for="captcha">验证码<span class="required">*</span></label>
-EOF;
 	}
   
 	public static function filter($comment, $obj) {
